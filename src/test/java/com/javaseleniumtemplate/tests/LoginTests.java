@@ -23,14 +23,13 @@ public class LoginTests extends TestBase {
         mainViewPage = new MainViewPage();
         String nome = "";
         String senha = "";
-        loginPage.wait();
+        loginPage.limparUsernameField();
         loginPage.preencherUsuario(nome);
         loginPage.clicarEmEntrar();
+        loginPage.limparSenhaField();
         loginPage.preencherSenha(senha);
         loginPage.clicarEmEntrar();
-
-
+        Assert.assertEquals(mainViewPage.retornaNomeUsuarioLabel(),nome);
     }
-
 
 }
