@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class GlobalParameters {
+    public static String ENVIROMENT;
     public static String BROWSER_DEFAULT;
     public static String EXECUTION;
     public static int TIMEOUT_DEFAULT;
@@ -20,6 +21,11 @@ public class GlobalParameters {
     public static String DB_SID;
     public static String DB_USER;
     public static String DB_PASSWORD;
+    public static String DB_NAME;
+    public static String URL_TOKEN;
+    public static String TOKEN;
+    public static String AUTHENTICATOR_USER;
+    public static String AUTHENTICATOR_PASSWORD;
 
     private Properties properties;
 
@@ -49,5 +55,30 @@ public class GlobalParameters {
         DB_SID = properties.getProperty("db.sid");
         DB_USER = properties.getProperty("db.user");
         DB_PASSWORD = properties.getProperty("db.password");
+        ENVIROMENT = properties.getProperty("enviroment");
+
+        if(ENVIROMENT.equals("hml")){
+            DB_URL = properties.getProperty("hml.db.url");
+            DB_NAME = properties.getProperty("hml.db.name");
+            DB_USER = properties.getProperty("hml.db.user");
+            DB_PASSWORD = properties.getProperty("hml.db.password");
+            URL_DEFAULT = properties.getProperty("hml.url.default");
+            URL_TOKEN = properties.getProperty("hml.url.token");
+            TOKEN = properties.getProperty("hml.token");
+            AUTHENTICATOR_USER = properties.getProperty("hml.authenticator.user");
+            AUTHENTICATOR_PASSWORD = properties.getProperty("hml.authenticator.password");
+        }
+
+        if(ENVIROMENT.equals("dev")){
+            DB_URL = properties.getProperty("dev.db.url");
+            DB_NAME = properties.getProperty("dev.db.name");
+            DB_USER = properties.getProperty("dev.db.user");
+            DB_PASSWORD = properties.getProperty("dev.db.password");
+            URL_DEFAULT = properties.getProperty("dev.url.default");
+            URL_TOKEN = properties.getProperty("dev.url.token");
+            TOKEN = properties.getProperty("dev.token");
+            AUTHENTICATOR_USER = properties.getProperty("dev.authenticator.user");
+            AUTHENTICATOR_PASSWORD = properties.getProperty("dev.authenticator.password");
+        }
     }
 }

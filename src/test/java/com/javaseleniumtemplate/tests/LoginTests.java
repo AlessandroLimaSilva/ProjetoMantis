@@ -17,12 +17,14 @@ public class LoginTests extends TestBase {
 
     //Tests
     @Test
-    public void realizarLoginInformandoNomeeSenhaValidosComSucesso(){
+    public void realizarLoginInformandoNomeESenhaValidosComSucesso() throws InterruptedException {
         //Objects instances
         loginPage = new LoginPage();
         mainViewPage = new MainViewPage();
-        String nome = "";
-        String senha = "";
+        String nome = "administrator";
+        String senha = "root";
+        Thread.sleep(3000);
+        Thread.sleep(3000);
         loginPage.limparUsernameField();
         loginPage.preencherUsuario(nome);
         loginPage.clicarEmEntrar();

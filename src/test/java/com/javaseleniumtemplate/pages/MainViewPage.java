@@ -7,26 +7,19 @@ import org.openqa.selenium.support.FindBy;
 
 public class MainViewPage extends PageBase {
 
-    @FindBy(xpath = "//span[text()=' Minha Visão ']")
-    private static By minhaVisaoBarraLateralButton;
+    private static By minhaVisaoBarraLateralButton = By.xpath("//span[text()=' Minha Visão ']");
 
-    @FindBy(xpath = "//span[text()=' Ver Tarefas ']")
-    private static By verTarefasBarraLateralButton;
+    private static By verTarefasBarraLateralButton = By.xpath("//span[text()=' Ver Tarefas ']");
 
-    @FindBy(xpath = "//span[text()=' Criar Tarefa ']")
-    private static By criarTarefasBarraLateralButton;
+    private static By criarTarefasBarraLateralButton = By.xpath("//span[text()=' Criar Tarefa ']");
 
-    @FindBy(xpath = "//span[text()=' Planejamento ']")
-    private static By planejamentoBarraLateralButton;
+    private static By planejamentoBarraLateralButton = By.xpath("//span[text()=' Planejamento ']");
 
-    @FindBy(xpath = "//span[@class='user-info']")
-    private static By nomeUsuarioLabel;
+    private static By nomeUsuarioLabel = By.xpath("//span[@class='user-info']");
 
-    @FindBy(xpath = "//a[text()=' Criar Tarefa']")
-    private static By criarTarefaMenuSuperiorButton;
+    private static By criarTarefaMenuSuperiorButton = By.xpath("//a[text()=' Criar Tarefa']");
 
-    @FindBy(xpath = "//input[@name='bug_id']")
-    private static By buscarTarefaField;
+    private static By buscarTarefaField = By.xpath("//input[@name='bug_id']");
 
     public void clicarMinhaVisaoBarraLateralButton()
     {

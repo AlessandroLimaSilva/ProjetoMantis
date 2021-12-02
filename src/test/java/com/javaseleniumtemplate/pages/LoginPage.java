@@ -7,12 +7,12 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends PageBase {
     //Mapping
-    @FindBy(xpath = "//input[@id='username']")
-    private By usernameField;
-    @FindBy(xpath = "//input[@id='password']")
-    private By senhaField;
-    @FindBy(xpath = "//input[@value='Entrar']")
-    private By entrarButton;
+
+    private By usernameField = By.xpath("//*[@id='username']");
+
+    private By senhaField = By.xpath("//input[@id='password']");
+
+    private By entrarButton = By.xpath("//input[@value='Entrar']");
 
     public void preencherUsuario(String usuario){ sendKeys(usernameField, usuario);}
 
