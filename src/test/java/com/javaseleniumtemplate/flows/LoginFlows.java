@@ -11,7 +11,7 @@ public class LoginFlows {
     }
 
     //Flows
-    public void efetuarLogin(String usuario, String senha){
+    public void realizarLogin(String usuario, String senha){
         loginPage.preencherUsuario(usuario);
         loginPage.clicarEmEntrar();
         loginPage.preencherSenha(senha);
