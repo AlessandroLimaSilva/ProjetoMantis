@@ -2,14 +2,17 @@ package com.javaseleniumtemplate.pages;
 
 import com.javaseleniumtemplate.bases.PageBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends PageBase {
     //Mapping
-    By usernameField = By.xpath("//input[@id='username']");
-    By senhaField = By.xpath("//input[@id='password']");
-    By entrarButton = By.xpath("//input[@value='Entrar']");
-    By mensagemErroTextArea = By.xpath("/html/body/div[2]/font");
-
+    @FindBy(xpath = "//input[@id='username']")
+    private By usernameField;
+    @FindBy(xpath = "//input[@id='password']")
+    private By senhaField;
+    @FindBy(xpath = "//input[@value='Entrar']")
+    private By entrarButton;
 
     public void preencherUsuario(String usuario){ sendKeys(usernameField, usuario);}
 
@@ -17,8 +20,10 @@ public class LoginPage extends PageBase {
 
     public void preencherSenha(String senha){ sendKeys(senhaField, senha);}
 
-
-    public String retornaNomeUsuarioLabel(){
-        return getText(mensagemErroTextArea);
+    public void limparUsernameField()
+    {
+        clear(usernameField);
     }
+
+    public void limparSenhaField(){ clear(senhaField);}
 }
