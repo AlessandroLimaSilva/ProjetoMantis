@@ -18,7 +18,7 @@ public class LoginPage extends PageBase {
     public void preencherSenha(String senha){ sendKeys(senhaField, senha);}
 
 
-    public String retornaMensagemDeErro(){
+    public String retornaNomeUsuarioLabel(){
         return getText(mensagemErroTextArea);
     }
 }
