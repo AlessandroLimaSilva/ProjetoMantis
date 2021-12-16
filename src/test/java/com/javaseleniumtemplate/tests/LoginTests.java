@@ -2,25 +2,21 @@ package com.javaseleniumtemplate.tests;
 
 import com.javaseleniumtemplate.bases.TestBase;
 import com.javaseleniumtemplate.pages.LoginPage;
-import com.javaseleniumtemplate.pages.MainViewPage;
-import org.openqa.selenium.support.pagefactory.ElementLocator;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import com.javaseleniumtemplate.pages.MyViewPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import javax.swing.text.Element;
 
 public class LoginTests extends TestBase {
     //Objects
     LoginPage loginPage;
-    MainViewPage mainViewPage;
+    MyViewPage myViewPage;
 
     //Tests
     @Test
     public void realizarLoginInformandoNomeESenhaValidosComSucesso() throws InterruptedException {
         //Objects instances
         loginPage = new LoginPage();
-        mainViewPage = new MainViewPage();
+        myViewPage = new MyViewPage();
         String nome = "administrator";
         String senha = "root";
         Thread.sleep(3000);
@@ -31,7 +27,7 @@ public class LoginTests extends TestBase {
         loginPage.limparSenhaField();
         loginPage.preencherSenha(senha);
         loginPage.clicarEmEntrar();
-        Assert.assertEquals(mainViewPage.retornaNomeUsuarioLabel(),nome);
+        Assert.assertEquals(myViewPage.retornaNomeUsuarioLabel(),nome);
     }
 
 }
